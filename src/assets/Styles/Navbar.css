@@ -1,0 +1,18 @@
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.navbar-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.navbar-text .text-primary {
+  font-weight: 700;
+}
