@@ -1,24 +1,24 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
 
 const CardPizza = ({ name, price, ingredients, img }) => {
   return (
-    <Card className="mb-4">
-      <Card.Img variant="top" src={img} />
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>
-          <strong>Ingredientes:</strong> {ingredients.join(", ")}
-        </Card.Text>
-        <Card.Text>
+    <div className="card h-100">
+      <img src={`assets/images/${img}`} className="card-img-top" alt={name} />
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text">
+          <strong>Ingredientes:</strong>
+          <ul>
+            {ingredients.map((ingredient, index) => (
+              <li key={index}>{ingredient}</li>
+            ))}
+          </ul>
+        </p>
+        <p className="card-text">
           <strong>Precio:</strong> ${price.toLocaleString()}
-        </Card.Text>
-        <div className="d-flex justify-content-between">
-          <Button variant="primary">Ver Más</Button>
-          <Button variant="success">Añadir</Button>
-        </div>
-      </Card.Body>
-    </Card>
+        </p>
+      </div>
+    </div>
   );
 };
 

@@ -4,7 +4,7 @@ import "../assets/Styles/Navbar.css";
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const total = 25000;
+  const total = 0;
 
   const handleLogin = () => setIsLoggedIn(true);
   const handleLogout = () => setIsLoggedIn(false);
@@ -50,7 +50,7 @@ const Navbar = () => {
                     className="btn btn-link nav-link"
                     onClick={handleLogout}
                   >
-                    🔒 Logout
+                    🔐 Logout
                   </button>
                 </li>
               </>
@@ -58,22 +58,21 @@ const Navbar = () => {
               <>
                 <li className="nav-item">
                   <Link className="nav-link" to="/login">
-                    🔐 Login
+                    🔒 Login
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/register">
-                    🔐 Register
+                    🔒 Register
                   </Link>
                 </li>
               </>
             )}
           </ul>
-          {/* Total */}
-          <span className="navbar-text text-light">
-            🛒 Total:{" "}
-            <span className="text-primary">${total.toLocaleString()}</span>
-          </span>
+          {/* Botón de carrito */}
+          <Link to="/cart" className="btn btn-warning ms-3">
+            🛒 Carrito: ${total.toLocaleString()}
+          </Link>
         </div>
       </div>
     </nav>
